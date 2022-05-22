@@ -1,5 +1,6 @@
 from producer_service import envia_mensagem
 import json
+import uuid
 
 class Produto:
 
@@ -7,6 +8,7 @@ class Produto:
         self.quantidade = quantidade
         self.codigo = codigo
         self.topico = "TOPICO_RECEPCAO_PRODUTO"
+        self.uuid = str(uuid.uuid4())
     
     def gera_aviso_compra(self):
         envia_mensagem(self.topico, json.dumps(self.__dict__))
