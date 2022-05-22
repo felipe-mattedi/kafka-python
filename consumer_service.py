@@ -1,6 +1,6 @@
 from kafka import KafkaConsumer
 
-consumer = KafkaConsumer('FELIPE_TOPICO_1','FELIPE_TOPICO_A', group_id='GRUPO1' )
+consumer = KafkaConsumer('FELIPE_TOPICO_1','FELIPE_TOPICO_A', group_id='GRUPO1', enable_auto_commit=False )
 
 try:
     for mensagem in consumer: 
